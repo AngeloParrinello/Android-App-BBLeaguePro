@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/stats_card"
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="@color/white"
+    app:strokeColor="@color/material_on_surface_stroke"
+    app:strokeWidth="1dp"
+    app:cardCornerRadius="@dimen/cardview_default_radius"
+    android:clickable="true">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Posizione"
+                android:id="@+id/text_posizione"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Punti"
+                android:textAlignment="center"
+                android:id="@+id/text_punti"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Win"
+                android:id="@+id/text_win"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Loss"
+            android:id="@+id/text_loss"
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+</com.google.android.material.card.MaterialCardView>

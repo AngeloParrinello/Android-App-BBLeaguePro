@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="16dp"
+    app:strokeColor="@color/material_on_surface_stroke"
+    app:strokeWidth="1dp">
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/card_title5incontri"
+        android:layout_width="125dp"
+        android:layout_height="25dp"
+        android:text="ULTIMI 5 INCONTRI"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/card_buttonmatch3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.291" />
+
+    <TextView
+        android:id="@+id/card_resultmatch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Risultato"
+        app:layout_constraintEnd_toEndOf="@+id/card_buttonmatch2"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="@+id/card_buttonmatch2"
+        app:layout_constraintTop_toBottomOf="@+id/card_buttonmatch2" />
+
+    <TextView
+        android:id="@+id/card_resultmatch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="1-1"
+        app:layout_constraintEnd_toEndOf="@+id/card_buttonmatch1"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="@+id/card_buttonmatch1"
+        app:layout_constraintTop_toBottomOf="@+id/card_buttonmatch1" />
+
+    <Button
+        android:id="@+id/card_buttonmatch3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:foreground="@drawable/rounded_fg"
+        android:text="V"
+        app:layout_constraintEnd_toStartOf="@+id/card_buttonmatch4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_buttonmatch2"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <Button
+        android:id="@+id/card_buttonmatch1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:foreground="@drawable/rounded_fg"
+        android:text="V"
+        app:layout_constraintEnd_toStartOf="@+id/card_buttonmatch2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <Button
+        android:id="@+id/card_buttonmatch4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:foreground="@drawable/rounded_fg"
+        android:text="V"
+        app:layout_constraintEnd_toStartOf="@+id/card_buttonmatch5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_buttonmatch3"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <TextView
+        android:id="@+id/card_resultmatch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Risultato"
+        app:layout_constraintEnd_toEndOf="@+id/card_buttonmatch3"
+        app:layout_constraintStart_toStartOf="@+id/card_buttonmatch3"
+        app:layout_constraintTop_toBottomOf="@+id/card_buttonmatch3" />
+
+    <TextView
+        android:id="@+id/card_resultmatch5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Risultato"
+        app:layout_constraintEnd_toEndOf="@+id/card_buttonmatch5"
+        app:layout_constraintStart_toStartOf="@+id/card_buttonmatch5"
+        app:layout_constraintTop_toBottomOf="@+id/card_buttonmatch5" />
+
+    <TextView
+        android:id="@+id/card_resultmatch4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Risultato"
+        app:layout_constraintEnd_toEndOf="@+id/card_buttonmatch4"
+        app:layout_constraintStart_toStartOf="@+id/card_buttonmatch4"
+        app:layout_constraintTop_toBottomOf="@+id/card_buttonmatch4" />
+
+    <Button
+        android:id="@+id/card_buttonmatch5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:foreground="@drawable/rounded_fg"
+        android:text="V"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_buttonmatch4"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="45dp" />
+
+    <Button
+        android:id="@+id/card_buttonmatch2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:foreground="@drawable/rounded_fg"
+        android:text="V"
+        app:layout_constraintEnd_toStartOf="@+id/card_buttonmatch3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_buttonmatch1"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

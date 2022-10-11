@@ -1,0 +1,516 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "59b9eb5b6dc2cb77d548dac677c45176",
+    "entities": [
+      {
+        "tableName": "ability",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, PRIMARY KEY(`name`))",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "name"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "coach",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userName` TEXT NOT NULL, `password` TEXT, PRIMARY KEY(`userName`))",
+        "fields": [
+          {
+            "fieldPath": "userName",
+            "columnName": "userName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "userName"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "day",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`number` INTEGER NOT NULL, `league` INTEGER NOT NULL, PRIMARY KEY(`number`, `league`))",
+        "fields": [
+          {
+            "fieldPath": "number",
+            "columnName": "number",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "league",
+            "columnName": "league",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "number",
+            "league"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "league",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`leagueID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `description` TEXT, `active` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "leagueID",
+            "columnName": "leagueID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "active",
+            "columnName": "active",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "leagueID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "league_player",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`number` INTEGER NOT NULL, `teamID` INTEGER NOT NULL, `sp` INTEGER NOT NULL, `armor` INTEGER NOT NULL, `agility` INTEGER NOT NULL, `strength` INTEGER NOT NULL, `movement` INTEGER NOT NULL, `type` TEXT, PRIMARY KEY(`number`, `teamID`), FOREIGN KEY(`type`) REFERENCES `player`(`name`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "number",
+            "columnName": "number",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "teamID",
+            "columnName": "teamID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sp",
+            "columnName": "sp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "armor",
+            "columnName": "armor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "agility",
+            "columnName": "agility",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "strength",
+            "columnName": "strength",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movement",
+            "columnName": "movement",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "number",
+            "teamID"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "player",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "type"
+            ],
+            "referencedColumns": [
+              "name"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "league_team",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `tv` INTEGER NOT NULL, `name` TEXT, `type` TEXT, `league` INTEGER NOT NULL, `owner` TEXT, `doctor` INTEGER NOT NULL, `fanFactor` INTEGER NOT NULL, `leagueOwner` INTEGER NOT NULL, FOREIGN KEY(`type`) REFERENCES `team`(`name`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`league`) REFERENCES `league`(`leagueID`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tv",
+            "columnName": "tv",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "league",
+            "columnName": "league",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "owner",
+            "columnName": "owner",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "doctor",
+            "columnName": "doctor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fanFactor",
+            "columnName": "fanFactor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "leagueOwner",
+            "columnName": "leagueOwner",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "team",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "type"
+            ],
+            "referencedColumns": [
+              "name"
+            ]
+          },
+          {
+            "table": "league",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "league"
+            ],
+            "referencedColumns": [
+              "leagueID"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Match",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`matchID` INTEGER NOT NULL, `day` INTEGER NOT NULL, `homeTeam` INTEGER NOT NULL, `awayTeam` INTEGER NOT NULL, PRIMARY KEY(`matchID`), FOREIGN KEY(`homeTeam`) REFERENCES `league_team`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`awayTeam`) REFERENCES `league_team`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "matchID",
+            "columnName": "matchID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "day",
+            "columnName": "day",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "homeTeam",
+            "columnName": "homeTeam",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "awayTeam",
+            "columnName": "awayTeam",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "matchID"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "league_team",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "homeTeam"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          },
+          {
+            "table": "league_team",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "awayTeam"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "player",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `armor` INTEGER NOT NULL, `agility` INTEGER NOT NULL, `strength` INTEGER NOT NULL, `movement` INTEGER NOT NULL, `cost` INTEGER NOT NULL, PRIMARY KEY(`name`))",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "armor",
+            "columnName": "armor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "agility",
+            "columnName": "agility",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "strength",
+            "columnName": "strength",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movement",
+            "columnName": "movement",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cost",
+            "columnName": "cost",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "name"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "team",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `reroll_cost` INTEGER NOT NULL, PRIMARY KEY(`name`))",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rerollCost",
+            "columnName": "reroll_cost",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "name"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "PlayerAbilityCrossRef",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`playerName` TEXT NOT NULL, `abilityName` TEXT NOT NULL, PRIMARY KEY(`playerName`, `abilityName`))",
+        "fields": [
+          {
+            "fieldPath": "playerName",
+            "columnName": "playerName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "abilityName",
+            "columnName": "abilityName",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "playerName",
+            "abilityName"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "LeaguePlayerAbilityCrossRef",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`playerNumber` INTEGER NOT NULL, `teamID` INTEGER NOT NULL, `abilityName` TEXT NOT NULL, PRIMARY KEY(`playerNumber`, `teamID`, `abilityName`))",
+        "fields": [
+          {
+            "fieldPath": "playerNumber",
+            "columnName": "playerNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "teamID",
+            "columnName": "teamID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "abilityName",
+            "columnName": "abilityName",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "playerNumber",
+            "teamID",
+            "abilityName"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "TeamPlayerCrossRef",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`playerName` TEXT NOT NULL, `teamName` TEXT NOT NULL, PRIMARY KEY(`playerName`, `teamName`))",
+        "fields": [
+          {
+            "fieldPath": "playerName",
+            "columnName": "playerName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "teamName",
+            "columnName": "teamName",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "playerName",
+            "teamName"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '59b9eb5b6dc2cb77d548dac677c45176')"
+    ]
+  }
+}

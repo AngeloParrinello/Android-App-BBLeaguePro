@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/match_sheet_row_programmatically"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/player_input_layout"
+        android:layout_margin="5dp"
+        android:hint="Player"
+        app:boxStrokeWidth="0dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:errorEnabled="true"
+        app:hintEnabled="true"
+        android:imeOptions="flagNoExtractUi"
+        android:textColor="@color/black"
+        android:textSize="14sp">
+
+        <AutoCompleteTextView
+            android:id="@+id/act_player_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:textStyle="bold"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/event_input_layout"
+        android:layout_margin="5dp"
+        android:hint="Event"
+        app:boxStrokeWidth="0dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:errorEnabled="true"
+        app:hintEnabled="true"
+        android:imeOptions="flagNoExtractUi"
+        android:textColor="@color/black"
+        android:textSize="14sp">
+
+        <AutoCompleteTextView
+            android:background="@drawable/rounded_grey"
+            android:id="@+id/act_event_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:textStyle="bold"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/x_img"
+        android:layout_width="25dp"
+        android:layout_margin="5dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_baseline_close_24"
+        android:layout_gravity="center_vertical"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

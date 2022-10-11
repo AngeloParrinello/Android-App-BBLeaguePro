@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item
+            android:id="@+id/page_1"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="Home"
+            app:showAsAction="ifRoom"
+
+            />
+        <item
+            android:id="@+id/page_3"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_calendar_today_24"
+            android:title="Calendario"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/page_vuoto"
+            android:enabled="false"
+            android:title="" />
+
+        <item
+            android:id="@+id/page_4"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_emoji_events_24"
+            android:title="Classifica"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/page_5"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_groups_24"
+            android:title="Team"
+            app:showAsAction="ifRoom"/>
+
+</menu>

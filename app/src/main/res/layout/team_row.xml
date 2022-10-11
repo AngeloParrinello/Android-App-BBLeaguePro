@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:clickable="true">
+    <TextView
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="1"
+        android:id="@+id/text_view_number"
+        android:textColor="@color/black" />
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:text="Blitzer"
+        android:id="@+id/text_view_type"
+        android:textColor="@color/black" />
+    <TextView
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="7"
+        android:id="@+id/text_view_mo"
+        android:textColor="@color/black" />
+    <TextView
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/text_view_fo"
+        android:text="3"
+        android:textColor="@color/black" />
+    <TextView
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/text_view_ag"
+        android:text=" 3"
+        android:textColor="@color/black" />
+    <TextView
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/text_view_va"
+        android:text=" 8"
+        android:textColor="@color/black" />
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:gravity="center"
+        android:id="@+id/text_view_ability"
+        android:textColor="@color/black" />
+    <TextView
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/text_view_sp"
+        android:text=" 6"
+        android:textColor="@color/black" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
